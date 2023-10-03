@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/student")
+@CrossOrigin
 public class StudentController {
     @Autowired
     private StudentService studentService;
@@ -29,7 +30,7 @@ public class StudentController {
         studentService.updateStudent(student);
         return "User has been updated";
     }
-    @GetMapping("/delete")
+    @DeleteMapping("/delete")
     public String delete(@RequestBody Student student){
         studentService.deleteStudent(student);
         return "Student has been deleted";
